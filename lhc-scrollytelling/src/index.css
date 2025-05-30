@@ -24,6 +24,6 @@ body{
   font-style: normal;
 }
 
-p{
+p, .text{
   font-family: 'Futura Std', sans-serif;
 }
