@@ -1,11 +1,10 @@
-import "../css/Intro.css";
+"use client";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
+import "@/app/intro.css"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MainParticle from "./components/mainParticle";
-import ParticlesTube from "./2_Particle_tube";
-import CollisionLetters from "./components/Collision Letters/collisionLetters";
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Intro() {
@@ -32,16 +31,26 @@ function Intro() {
     };
   }, []);
 
+
+  
+// Draft to go to next page, change with scroll later
+  const router = useRouter();
+
+  const goToNextPage = () => {
+    router.push("/particleTube"); // path of the page you want to navigate to
+  };
+
+
   return (
     <>
-      <div>
+      <div className="big-wrapper">
         <div>
           <h1 className="big-title main-title">MAKING THE INVISIBLE VISIBLE</h1>
         </div>
         <p>
           How new the Higgs Boson (and other particles) are discovered at Cern
         </p>
-      </div>
+      
       <div className="pt-2">
         <h1 ref={subtitleRef} className="big-title sub-title">
           Some particles, like the Higgs boson, do not exist naturally in our
@@ -56,9 +65,11 @@ function Intro() {
         </div> */}
         <MainParticle ref={imgRef}></MainParticle>
       </div>
-      <ParticlesTube />
-      <CollisionLetters />
-      <CollisionLetters />
+      <button onClick={goToNextPage}>next page</button>
+      </div>
+      <img src="/assets/particles/pink/O_2.png" alt="Particle 2" />
+      <img src="/assets/particles/pink/O_2.png" alt="Particle 2" />
+      <img src="/assets/particles/pink/O_2.png" alt="Particle 2" />
     </>
   );
 }

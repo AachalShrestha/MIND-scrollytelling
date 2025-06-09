@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -8,8 +7,8 @@
 }
 
 .main-title{
-  font-size: 150px;
-  margin: 10vh 0 2vh;
+  font-size: 10vw;
+  margin: 5vh 0 2vh;
 }
 
 .img-main {
@@ -37,12 +36,7 @@
   margin-top: 30vh;
 }
 
-
-/* LETTERS ANIMAITION */
-.proton-letter{
-    font-family: "Dokdo", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  color: #4CA47E;
+.big-wrapper{
+    margin: 17vh 5% 0 5%;
+    text-align: center;
 }
-
