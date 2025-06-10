@@ -25,7 +25,7 @@ export default function ParticlesTube() {
         ease: "none",
         scrollTrigger: {
           trigger: wrapperRef.current,
-          start: "top 7%",
+          start: "top 2%",
           end: "bottom 20%",
           pin: true,
           scrub: true,
@@ -42,7 +42,7 @@ export default function ParticlesTube() {
             <path
               id="master"
               d="M0.5 164C161.833 169.667 460.1 170.8 486.5 164C519.5 155.5 545 136.5 568 101C591 65.5 610.5 -1.49999 679.5 1.50001C748.5 4.50001 750.5 52.5 785 67C819.5 81.5 879.5 68 898 101C916.5 134 939.844 168.262 979.5 173.5C1059 184 1209.83 164 1323.5 164"
-              stroke="black"
+              stroke="none"
               fill="none"
               strokeWidth="2"
             />
@@ -59,7 +59,6 @@ export default function ParticlesTube() {
           </svg>
         </div>
       </div>
-      <MainParticle></MainParticle>
     </>
   );
 }

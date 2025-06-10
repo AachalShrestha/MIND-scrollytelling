@@ -2,9 +2,12 @@ import "../css/Intro.css";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useInView } from "framer-motion";
+
 import MainParticle from "./components/mainParticle";
 import ParticlesTube from "./2_Particle_tube";
 import CollisionLetters from "./components/Collision Letters/collisionLetters";
+import CollisionLettersForm from "./components/Collision Letters/collisionLettersForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,6 +35,18 @@ function Intro() {
     };
   }, []);
 
+  //main img dissapear when collision form is in view
+  const formRef = useRef(null);
+  const isInView = useInView(formRef, {
+    margin: "20px 0px 0px 0px",
+    once: false,
+  });
+
+  useEffect(() => {
+    console.log("formRef.current = ", formRef.current);
+    console.log(isInView.current);
+  }, []);
+
   return (
     <>
       <div>
@@ -54,11 +69,21 @@ function Intro() {
             src="/assets/particles/pink/O_MAIN.png"
           />
         </div> */}
-        <MainParticle ref={imgRef}></MainParticle>
+        <motion.div
+          className="mainParticle"
+          style={{
+            opacity: isInView ? 0 : 1,
+            pointerEvents: isInView ? "none" : "auto",
+            transition: "opacity 0.5s ease",
+          }}
+        >
+          <MainParticle></MainParticle>
+        </motion.div>
       </div>
       <ParticlesTube />
       <CollisionLetters />
       <CollisionLetters />
+      <CollisionLettersForm innerRef={formRef}></CollisionLettersForm>
     </>
   );
 }

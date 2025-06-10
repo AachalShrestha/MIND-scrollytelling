@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+@font-face {
+  font-family: 'Picnic Regular';
+  src: url('../assets/fonts/PICNIC-REGULAR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* This helps with performance and FOUT (Flash of Unstyled Text) */
+}
 
 #root {
   max-width: 1280px;
@@ -38,11 +46,4 @@
 }
 
 
-/* LETTERS ANIMAITION */
-.proton-letter{
-    font-family: "Dokdo", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  color: #4CA47E;
-}
 
